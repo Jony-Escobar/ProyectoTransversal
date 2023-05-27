@@ -1,64 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Modelo;
 
+/**
+ *
+ * @author Sergio
+ */
 public class Inscripcion {
-
-    private int idInscripto;
-    private Alumno alumno;
-    private Materia materia;
-    private double nota;
+   private int idInscripcion;
+   private int idAlumno;
+   private int idMateria;
+   private float nota;
 
     public Inscripcion() {
     }
 
-    public Inscripcion(int idInscripto, Alumno alumno, Materia materia, double nota) {
-        this.idInscripto = idInscripto;
-        this.alumno = alumno;
-        this.materia = materia;
+    public Inscripcion(int idAlumno, int idMateria, float nota) {
+        this.idAlumno = idAlumno;
+        this.idMateria = idMateria;
         this.nota = nota;
     }
 
-    public Inscripcion(Alumno alumno, Materia materia, double nota) {
-        this.alumno = alumno;
-        this.materia = materia;
+    public Inscripcion(int idInscripcion, int idAlumno, int idMateria, float nota) {
+        this.idInscripcion= idInscripcion;
+        this.idAlumno = idAlumno;
+        this.idMateria = idMateria;
         this.nota = nota;
     }
+    
 
-    public int getIdInscripto() {
-        return idInscripto;
+    public int getIdInscripcion() {
+        return idInscripcion;
     }
 
-    public void setIdInscripto(int idInscripto) {
-        this.idInscripto = idInscripto;
+    public void setIdInscripcion(int idInscripcion) {
+        this.idInscripcion = idInscripcion;
     }
 
-    public Alumno getAlumno() {
-        return alumno;
+    
+    
+    public int getIdAlumno() {
+        return idAlumno;
     }
 
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setIdAlumno(int idAlumno) {
+        this.idAlumno = idAlumno;
     }
 
-    public Materia getMateria() {
-        return materia;
+    public int getIdMateria() {
+        return idMateria;
     }
 
-    public void setMateria(Materia materia) {
-        this.materia = materia;
+    public void setIdMateria(int idMateria) {
+        this.idMateria = idMateria;
     }
 
-    public double getNota() {
+    public float getNota() {
         return nota;
     }
 
-    public void setNota(double nota) {
+    public void setNota(float nota) {
         this.nota = nota;
     }
 
     @Override
     public String toString() {
-        return "Inscripcion{" + "idInscripto=" + idInscripto + ", alumno=" + alumno + ", materia=" + materia + ", nota=" + nota + '}';
+        //return "Inscripcion{" + "idInscripcion= " + idInscripcion + ", idAlumno= " + idAlumno + ", idMateria= " + idMateria + ", nota= " + nota + '}';
+        return "idInscripcion: " + idInscripcion + " idAlumno= " + idAlumno + " idMateria= " + idMateria + " nota= " + nota;
     }
-    
-    
+   
+   
+           
+           
 }

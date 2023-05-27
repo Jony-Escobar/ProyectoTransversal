@@ -1,22 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Modelo;
 
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Sergio
+ */
 public class Materia {
     private int idMateria;
     private String nombre;
     private int anio;
-    private boolean estado;
+    private int estado;
 
     public Materia() {
     }
 
-    public Materia(int idMateria, String nombre, int anio, boolean estado) {
-        this.idMateria = idMateria;
+    public Materia(String nombre, int anio, int estado) {
         this.nombre = nombre;
         this.anio = anio;
         this.estado = estado;
     }
 
-    public Materia(String nombre, int anio, boolean estado) {
+    public Materia(int idMateria, String nombre, int anio, int estado) {
+        this.idMateria = idMateria;
         this.nombre = nombre;
         this.anio = anio;
         this.estado = estado;
@@ -29,6 +40,8 @@ public class Materia {
     public void setIdMateria(int idMateria) {
         this.idMateria = idMateria;
     }
+
+    
 
     public String getNombre() {
         return nombre;
@@ -46,20 +59,19 @@ public class Materia {
         this.anio = anio;
     }
 
-    public boolean isEstado() {
+    public int isEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(int estado) {
         this.estado = estado;
     }
 
     @Override
     public String toString() {
-        return nombre + " " + anio;
+        JOptionPane.showMessageDialog(null, "ID: "+ idMateria+ "Nombre: "+ nombre);
+        return "Materia{" + "idMateria = " + idMateria + ", nombre=" + nombre + ", anio=" + anio + ", estado=" + estado + '}';
     }
-
-    
     
     
 }
