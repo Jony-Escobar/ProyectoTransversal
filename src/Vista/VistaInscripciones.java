@@ -24,6 +24,11 @@ public class VistaInscripciones extends javax.swing.JInternalFrame {
         btnSalir = new javax.swing.JButton();
         btnAnularInscripcion = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setText("-FORMULARIO DE INSCRIPCION-");
 
