@@ -26,6 +26,8 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        txtAnio = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -80,6 +82,14 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setText("-MATERIAS-");
 
+        jLabel4.setText("AÑO:");
+
+        txtAnio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAnioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,14 +102,16 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4))
                                 .addGap(50, 50, 50)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(48, 48, 48)
                                         .addComponent(btnBuscar))
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnGuardar)
                                 .addGap(52, 52, 52)
@@ -135,7 +147,11 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
                         .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(btnBorrar)
@@ -157,12 +173,14 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         MateriaData md = new MateriaData();
         txtNombre.setText(md.buscarMateria(Integer.parseInt(txtId.getText())).getNombre());
+        txtAnio.setText(md.buscarMateria(Integer.parseInt(txtId.getText())).getAnio() + "");
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         txtId.setText("");
         txtNombre.setText("");  
+        txtAnio.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     
@@ -171,20 +189,60 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
             MateriaData md = new MateriaData();
             Materia m = md.buscarMateria(Integer.parseInt(txtId.getText()));
             m.setNombre(txtNombre.getText());
+            m.setAnio(Integer.parseInt(txtAnio.getText()));
             md.modificarMateria(m);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al actualizar materia");
+        }finally{
+            txtId.setText("");
+            txtNombre.setText("");  
+            txtAnio.setText("");
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         MateriaData md = new MateriaData();
         md.eliminarMateria(Integer.parseInt(txtId.getText()));
+        
+        txtId.setText("");
     }//GEN-LAST:event_btnBorrarActionPerformed
 
+    
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // guardar¿?
+        try {
+            MateriaData md = new MateriaData();
+            Materia m = new Materia();
+
+            if(!txtNombre.getText().equals("")){
+                m.setNombre(txtNombre.getText());
+
+                if(!txtAnio.getText().equals("")){
+                    m.setAnio(Integer.parseInt(txtAnio.getText()));
+                    m.setEstado(1);
+                    
+                    md.guardarMateria(m);
+                    txtId.setText("");
+                    txtNombre.setText("");  
+                    txtAnio.setText("");
+                    
+                }else{
+                    JOptionPane.showMessageDialog(this, "Por favor, ingrese un año.");
+                    txtAnio.requestFocus();
+                }
+
+            }else{
+                JOptionPane.showMessageDialog(this, "Por favor, ingrese un nombre.");
+                txtNombre.requestFocus();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al guardar materia");
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    
+    private void txtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAnioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -196,8 +254,10 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
