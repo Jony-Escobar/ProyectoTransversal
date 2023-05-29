@@ -1,5 +1,9 @@
 package Vista;
 
+import AccesoADatos.MateriaData;
+import Modelo.Materia;
+import javax.swing.JOptionPane;
+
 public class VistaMaterias extends javax.swing.JInternalFrame {
 
     public VistaMaterias() {
@@ -33,12 +37,32 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         jLabel2.setText("NOMBRE:");
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
 
         btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,9 +153,38 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
 
+    
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
+        MateriaData md = new MateriaData();
+        txtNombre.setText(md.buscarMateria(Integer.parseInt(txtId.getText())).getNombre());
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        txtId.setText("");
+        txtNombre.setText("");  
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        try {
+            MateriaData md = new MateriaData();
+            Materia m = md.buscarMateria(Integer.parseInt(txtId.getText()));
+            m.setNombre(txtNombre.getText());
+            md.modificarMateria(m);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al actualizar materia");
+        }
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        MateriaData md = new MateriaData();
+        md.eliminarMateria(Integer.parseInt(txtId.getText()));
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // guardar¿?
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
