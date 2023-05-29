@@ -135,7 +135,7 @@ public class InscripcionData {
                 JOptionPane.showMessageDialog(cmpnt, "Inscripcion eliminada");
             } else {
 
-                JOptionPane.showMessageDialog(null, "No existía tal inscripción");
+                JOptionPane.showMessageDialog(null, "No existia tal inscripción");
             }
             ps.close();
         } catch (SQLException ex) {
