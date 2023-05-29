@@ -1,28 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author Sergio
- */
 public class Alumno {
     private int idAlumno;
     private int dni;
     private String apellido;
     private String nombre;
     private LocalDate fechaNac;
-    private int estado;
+    private boolean estado;
 
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, int dni, String apellido, String nombre, LocalDate fechaNac, int estado) {
+    public Alumno(int idAlumno, int dni, String apellido, String nombre, LocalDate fechaNac, boolean estado) {
         this.idAlumno = idAlumno;
         this.dni = dni;
         this.apellido = apellido;
@@ -31,7 +22,7 @@ public class Alumno {
         this.estado = estado;
     }
 
-    public Alumno(int dni, String apellido, String nombre, LocalDate fechaNac, int estado) {
+    public Alumno(int dni, String apellido, String nombre, LocalDate fechaNac, boolean estado) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -83,11 +74,11 @@ public class Alumno {
         this.fechaNac = fechaNac;
     }
 
-    public int isEstado() {
+    public boolean isEstado() {
         return estado;
     }
 
-    public void setEstado(int estado) {
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 

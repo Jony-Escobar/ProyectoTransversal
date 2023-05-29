@@ -2,6 +2,7 @@ package Vista;
 
 import AccesoADatos.AlumnoData;
 import AccesoADatos.Conexion;
+import Modelo.Alumno;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -65,10 +66,25 @@ public VistaAlumnos() {
         });
 
         btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
 
         btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         chActivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +93,11 @@ public VistaAlumnos() {
         });
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("DNI:");
 
@@ -186,13 +207,54 @@ public VistaAlumnos() {
     }//GEN-LAST:event_chActivoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        String dni = txtDni.getText();
+        int dni = Integer.parseInt(txtDni.getText());
         String nombre = txtNombre.getText();
         String apellido = txtApellido.getText();
         LocalDate fechaNac = LocalDate.parse(txtFechaNac.getText(),DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         boolean activo = chActivo.isEnabled();
-        //Alumno alumno = new Alumno(dni,nombre, apellido, fechaNac,activo);
+        Alumno alumno = new Alumno(dni, nombre, apellido, fechaNac, activo);
+        alumnoData.guardarAlumno(alumno);
+        txtId.setText(alumno.getIdAlumno()+"");
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        int id = Integer.parseInt(txtId.getText());
+        alumnoData.eliminarAlumno(id);
+    }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        if (txtId!=null) {
+            int dni = Integer.parseInt(txtDni.getText());
+            String nombre = txtNombre.getText();
+            String apellido = txtApellido.getText();
+            LocalDate fechaNac = LocalDate.parse(txtFechaNac.getText(),DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            boolean activo = chActivo.isEnabled();
+            Alumno alumno = new Alumno(dni, nombre, apellido, fechaNac, activo);
+            alumnoData.modificarAlumno(alumno);
+        }        
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        txtId.setText("");
+        txtApellido.setText("");
+        txtDni.setText("");
+        txtNombre.setText("");
+        txtFechaNac.setText("");
+        chActivo.setEnabled(false);
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+//        int id = Integer.parseInt(txtId.getText());
+//        Alumno alum = alumnoData.buscarAlumno(id);
+//        if (alum!=null) {
+//            txtId.setText(alum.getIdAlumno());
+//            txtApellido.setText("");
+//            txtDni.setText("");
+//            txtNombre.setText("");
+//            txtFechaNac.setText("");
+//            chActivo.setEnabled(false);
+//        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
