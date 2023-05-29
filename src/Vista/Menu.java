@@ -2,15 +2,10 @@ package universidad.vistas;
 
 import java.awt.Color;
 
-/**
- *
- * @author Anto
- */
+
 public class MenuView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuView
-     */
+   
     public MenuView() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -19,7 +14,7 @@ public class MenuView extends javax.swing.JFrame {
 
    
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+  
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
@@ -210,9 +205,7 @@ public class MenuView extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MenuView().setVisible(true);
@@ -220,7 +213,7 @@ public class MenuView extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+  
     private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem itemAlumnos;
     private javax.swing.JMenuItem itemInscripciones;
@@ -233,5 +226,5 @@ public class MenuView extends javax.swing.JFrame {
     private javax.swing.JMenu menuMateria;
     private javax.swing.JMenu menuNotas;
     private javax.swing.JMenu menuSalir;
-    // End of variables declaration//GEN-END:variables
+   
 }
