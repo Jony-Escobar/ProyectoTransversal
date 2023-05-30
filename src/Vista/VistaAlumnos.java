@@ -103,8 +103,6 @@ public VistaAlumnos() {
 
         jLabel7.setText("APELLIDO:");
 
-        txtFechaNac.setText("dd/mm/yyyy");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -244,16 +242,16 @@ public VistaAlumnos() {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-//        int id = Integer.parseInt(txtId.getText());
-//        Alumno alum = alumnoData.buscarAlumno(id);
-//        if (alum!=null) {
-//            txtId.setText(alum.getIdAlumno());
-//            txtApellido.setText("");
-//            txtDni.setText("");
-//            txtNombre.setText("");
-//            txtFechaNac.setText("");
-//            chActivo.setEnabled(false);
-//        }
+        int id = Integer.parseInt(txtId.getText());
+        Alumno alum = alumnoData.buscarAlumno(id);
+        if (alum!=null) {
+            txtId.setText(alum.getIdAlumno()+"");
+            txtApellido.setText(alum.getApellido());
+            txtDni.setText(alum.getDni()+"");
+            txtNombre.setText(alum.getNombre());
+            txtFechaNac.setText(alum.getFechaNac().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            chActivo.setSelected(alum.isEstado());
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
 

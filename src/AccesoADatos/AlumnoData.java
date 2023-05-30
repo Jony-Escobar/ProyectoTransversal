@@ -1,23 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-//package prueba;
-
-/**
- *
- * @author Sergio
- */
-/*public class AlumnoData {
-  
-}*/
-
 package AccesoADatos;
 
 import Modelo.Alumno;
-
-//import universidadejemplo.Entidades.Alumno;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -49,21 +32,20 @@ public class AlumnoData {
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNac()));//localDate a Date
-            //ps.setBoolean(5, alumno.isEstado()); // if reducido
-            ps.setInt(5, alumno.isEstado());
+            ps.setBoolean(5, alumno.isEstado()); // if reducido
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
-                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setIdAlumno(rs.getInt(1));
                 JOptionPane.showMessageDialog(null, "Alumno añadido con exito.");
             } 
             ps.close();
             
         } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno"+ex.getMessage());
+           JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno "+ex.getMessage());
         }
-
     }
+    
     public Alumno buscarAlumno(int id) {
         Alumno alumno = null;
         String sql = "SELECT  idAlumno, dni, apellido, nombre, fechaNacimiento,estado FROM alumno WHERE idAlumno=? AND estado = 1";
@@ -80,7 +62,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getInt("estado"));
+                alumno.setEstado(rs.getBoolean("estado"));
                 JOptionPane.showMessageDialog(null, "Alumno recuperado");
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el alumno");
@@ -109,7 +91,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getInt("estado"));
+                alumno.setEstado(rs.getBoolean("estado"));
             
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el alumno");
@@ -137,7 +119,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getInt("estado"));
+                alumno.setEstado(rs.getBoolean("estado"));
                 alumnos.add(alumno);
             }
             ps.close();
@@ -168,8 +150,8 @@ public class AlumnoData {
             } else {
                 JOptionPane.showMessageDialog(null, "El alumno no existe");
             }
-
-        } catch (SQLException ex) {
+        } 
+        catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno "+ex.getMessage());
         }
      }

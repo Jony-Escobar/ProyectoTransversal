@@ -112,7 +112,7 @@ public class InscripcionData {
                 alu.setApellido(rs.getString("apellido"));
                 alu.setNombre(rs.getString("nombre"));
                 alu.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alu.setEstado(rs.getInt("estado"));
+                alu.setEstado(rs.getBoolean("estado"));
                 listaAlumnosMateria.add(alu); //agrego al arrayList el alumno recuperado en alu
             }
             ps.close();
