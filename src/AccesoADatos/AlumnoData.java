@@ -133,7 +133,7 @@ public class AlumnoData {
 
     public void modificarAlumno(Alumno alumno) {
 
-        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNacimiento = ? WHERE  idAlumno = ?";
+        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNacimiento = ?, estado = ? WHERE  idAlumno = ?";
         PreparedStatement ps = null;
 
         try {
@@ -142,11 +142,12 @@ public class AlumnoData {
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNac()));
-            ps.setInt(5, alumno.getIdAlumno());
+            ps.setBoolean(5,alumno.isEstado());
+            ps.setInt(6, alumno.getIdAlumno());
             int exito = ps.executeUpdate();
             
             if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
+                JOptionPane.showMessageDialog(null, "Modificado exitosamente");
             } else {
                 JOptionPane.showMessageDialog(null, "El alumno no existe");
             }

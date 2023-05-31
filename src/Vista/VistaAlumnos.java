@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class VistaAlumnos extends javax.swing.JInternalFrame {
-private AlumnoData alumnoData;
-private Conexion conexion;
+private final AlumnoData alumnoData;
+private final Conexion conexion;
     
 public VistaAlumnos() {
         initComponents();
@@ -221,15 +221,16 @@ public VistaAlumnos() {
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        if (txtId!=null) {
-            int dni = Integer.parseInt(txtDni.getText());
-            String nombre = txtNombre.getText();
-            String apellido = txtApellido.getText();
-            LocalDate fechaNac = LocalDate.parse(txtFechaNac.getText(),DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            boolean activo = chActivo.isEnabled();
-            Alumno alumno = new Alumno(dni, nombre, apellido, fechaNac, activo);
-            alumnoData.modificarAlumno(alumno);
-        }        
+            if (txtId!=null) {                    
+                int dni = Integer.parseInt(txtDni.getText());
+                String nombre = txtNombre.getText();
+                String apellido = txtApellido.getText();
+                LocalDate fechaNac = LocalDate.parse(txtFechaNac.getText(),DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                boolean activo = chActivo.isEnabled();
+                int id = Integer.parseInt(txtId.getText());
+                Alumno alumno = new Alumno(id, dni, apellido, nombre, fechaNac, activo);
+                alumnoData.modificarAlumno(alumno);
+            }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
