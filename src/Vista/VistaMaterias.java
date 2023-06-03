@@ -325,7 +325,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if(jrbNueva.isSelected()){
+        if(jrbNueva.isSelected() && !txtNombre.equals("")){
             try {
                 Materia m = new Materia();
                 m.setNombre(txtNombre.getText());

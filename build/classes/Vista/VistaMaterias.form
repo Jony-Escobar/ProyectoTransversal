@@ -116,7 +116,6 @@
                       <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbAnio" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAnio" alignment="3" min="-2" max="-2" attributes="0"/>
