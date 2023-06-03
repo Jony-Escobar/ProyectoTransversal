@@ -69,8 +69,9 @@ public class Materia {
 
     @Override
     public String toString() {
-        JOptionPane.showMessageDialog(null, "ID: "+ idMateria+ "Nombre: "+ nombre);
-        return "Materia{" + "idMateria = " + idMateria + ", nombre=" + nombre + ", anio=" + anio + ", estado=" + estado + '}';
+        //JOptionPane.showMessageDialog(null, "ID: "+ idMateria+ "Nombre: "+ nombre);
+        //return "Materia{" + "idMateria = " + idMateria + ", nombre=" + nombre + ", anio=" + anio + ", estado=" + estado + '}';
+        return idMateria + " - "+ nombre + " - "+ anio;
     }
     
     

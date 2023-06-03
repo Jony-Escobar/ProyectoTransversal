@@ -35,10 +35,52 @@
               <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
+              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jSeparator1" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+=======
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
                   <Component id="jSeparator2" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" pref="76" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jtfDocumento" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jrbEstado" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jtfNombre" min="-2" pref="235" max="-2" attributes="0"/>
+                                          <Component id="jtfApellido" alignment="0" min="-2" pref="238" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jdcFechaNac" min="-2" pref="162" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+=======
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
@@ -86,13 +128,24 @@
                               <Component id="btnBorrar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               <Component id="btnActualizar" min="-2" max="-2" attributes="0"/>
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnLimpiar" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnLimpiar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="52" max="32767" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,7 +159,7 @@
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtfDocumento" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -116,8 +169,13 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+<<<<<<< HEAD
+                  <Component id="jLabel6" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="jtfApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
                   <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -126,6 +184,36 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
+<<<<<<< HEAD
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtfNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jrbEstado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="jdcFechaNac" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSalir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+=======
                   <Component id="txtFechaNac" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -142,6 +230,7 @@
                   <Component id="btnLimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
           </Group>
       </Group>
     </DimensionLayout>
@@ -152,12 +241,12 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="-ALUMNOS-"/>
+        <Property name="text" type="java.lang.String" value="- ALUMNOS -"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ID:"/>
+        <Property name="text" type="java.lang.String" value="DOCUMENTO"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -172,13 +261,33 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ACTIVO:"/>
+        <Property name="text" type="java.lang.String" value="ESTADO"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnLimpiar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nuevo"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEliminar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Eliminar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
+<<<<<<< HEAD
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+=======
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
       </Events>
@@ -210,12 +319,26 @@
     <Component class="javax.swing.JCheckBox" name="chActivo">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chActivoActionPerformed"/>
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtId">
+    <Component class="javax.swing.JButton" name="btnSalir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombre">
+    <Component class="javax.swing.JTextField" name="jtfDocumento">
     </Component>
+<<<<<<< HEAD
+    <Component class="javax.swing.JTextField" name="jtfNombre">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+=======
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
     <Component class="javax.swing.JSeparator" name="jSeparator2">
     </Component>
     <Component class="javax.swing.JButton" name="btnBuscar">
@@ -228,6 +351,19 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
+<<<<<<< HEAD
+        <Property name="text" type="java.lang.String" value="APELLIDO:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtfApellido">
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="jdcFechaNac">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jrbEstado">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbEstadoActionPerformed"/>
+      </Events>
+=======
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
     </Component>
@@ -241,6 +377,7 @@
     <Component class="javax.swing.JTextField" name="txtApellido">
     </Component>
     <Component class="javax.swing.JTextField" name="txtFechaNac">
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
     </Component>
   </SubComponents>
 </Form>

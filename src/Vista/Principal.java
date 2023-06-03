@@ -1,5 +1,8 @@
 package Vista;
 
+import AccesoADatos.Conexion;
+import java.sql.Connection;
+
 public class Principal extends javax.swing.JFrame {
 
     public Principal() {
@@ -77,6 +80,11 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Inscripciones");
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu4ActionPerformed(evt);
+            }
+        });
 
         jMenuItemInscripciones.setText("Formulario de Inscripciones");
         jMenuItemInscripciones.addActionListener(new java.awt.event.ActionListener() {
@@ -101,8 +109,18 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("Consultas");
+        jMenu6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu6ActionPerformed(evt);
+            }
+        });
 
         jMenuItemAlumnosXMateria.setText("Listado de Alumnos por Materia");
+        jMenuItemAlumnosXMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAlumnosXMateriaActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItemAlumnosXMateria);
 
         jMenuBar1.add(jMenu6);
@@ -162,6 +180,28 @@ public class Principal extends javax.swing.JFrame {
         escritorio.add(vc);
         escritorio.moveToFront(vc);
     }//GEN-LAST:event_jMenuItemCargaNotasActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaInscripciones vins= new VistaInscripciones();
+        vins.setVisible(true);
+        escritorio.add(vins);
+        escritorio.moveToFront(vins);
+    }//GEN-LAST:event_jMenu4ActionPerformed
+
+    private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
+        
+    }//GEN-LAST:event_jMenu6ActionPerformed
+
+    private void jMenuItemAlumnosXMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAlumnosXMateriaActionPerformed
+       escritorio.removeAll();
+        escritorio.repaint();
+        VistaAlumnosMaterias vistaAlMat= new VistaAlumnosMaterias();
+        vistaAlMat.setVisible(true);
+        escritorio.add(vistaAlMat);
+        escritorio.moveToFront(vistaAlMat);
+    }//GEN-LAST:event_jMenuItemAlumnosXMateriaActionPerformed
 
     public static void main(String args[]) {
 

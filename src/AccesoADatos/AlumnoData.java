@@ -42,7 +42,12 @@ public class AlumnoData {
             ps.close();
             
         } catch (SQLException ex) {
+<<<<<<< HEAD
+           JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno"+ex.getMessage());
+            ex.printStackTrace();
+=======
            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno "+ex.getMessage());
+>>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
         }
     }
     

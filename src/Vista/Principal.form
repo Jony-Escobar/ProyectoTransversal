@@ -53,6 +53,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Inscripciones"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu4ActionPerformed"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemInscripciones">
               <Properties>
@@ -83,11 +86,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu6ActionPerformed"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemAlumnosXMateria">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listado de Alumnos por Materia"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemAlumnosXMateriaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
