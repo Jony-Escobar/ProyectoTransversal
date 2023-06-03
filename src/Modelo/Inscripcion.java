@@ -1,11 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Modelo;
 
+/**
+ *
+ * @author Sergio
+ */
 public class Inscripcion {
-
-    private int idInscripcion;
-    private int idAlumno;
-    private int idMateria;
-    private float nota;
+   private int idInscripcion;
+   private int idAlumno;
+   private int idMateria;
+   private float nota;
 
     public Inscripcion() {
     }
@@ -17,11 +25,12 @@ public class Inscripcion {
     }
 
     public Inscripcion(int idInscripcion, int idAlumno, int idMateria, float nota) {
-        this.idInscripcion = idInscripcion;
+        this.idInscripcion= idInscripcion;
         this.idAlumno = idAlumno;
         this.idMateria = idMateria;
         this.nota = nota;
     }
+    
 
     public int getIdInscripcion() {
         return idInscripcion;
@@ -31,6 +40,8 @@ public class Inscripcion {
         this.idInscripcion = idInscripcion;
     }
 
+    
+    
     public int getIdAlumno() {
         return idAlumno;
     }
@@ -60,5 +71,8 @@ public class Inscripcion {
         //return "Inscripcion{" + "idInscripcion= " + idInscripcion + ", idAlumno= " + idAlumno + ", idMateria= " + idMateria + ", nota= " + nota + '}';
         return "idInscripcion: " + idInscripcion + " idAlumno= " + idAlumno + " idMateria= " + idMateria + " nota= " + nota;
     }
-
+   
+   
+           
+           
 }

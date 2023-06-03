@@ -1,6 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+//package prueba;
+
+/**
+ *
+ * @author Sergio
+ */
+/*public class AlumnoData {
+  
+}*/
+
 package AccesoADatos;
 
 import Modelo.Alumno;
+
+//import universidadejemplo.Entidades.Alumno;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -32,7 +49,8 @@ public class AlumnoData {
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNac()));//localDate a Date
-            ps.setBoolean(5, alumno.isEstado()); // if reducido
+            //ps.setBoolean(5, alumno.isEstado()); // if reducido
+            ps.setInt(5, alumno.isEstado());
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
@@ -42,15 +60,11 @@ public class AlumnoData {
             ps.close();
             
         } catch (SQLException ex) {
-<<<<<<< HEAD
            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno"+ex.getMessage());
             ex.printStackTrace();
-=======
-           JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno "+ex.getMessage());
->>>>>>> 70d470eb378411ed84339f17d0c3727d463c5d9e
         }
+
     }
-    
     public Alumno buscarAlumno(int id) {
         Alumno alumno = null;
         String sql = "SELECT  idAlumno, dni, apellido, nombre, fechaNacimiento,estado FROM alumno WHERE idAlumno=? AND estado = 1";
@@ -67,7 +81,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getBoolean("estado"));
+                alumno.setEstado(rs.getInt("estado"));
                 JOptionPane.showMessageDialog(null, "Alumno recuperado");
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el alumno");
@@ -96,7 +110,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getBoolean("estado"));
+                alumno.setEstado(rs.getInt("estado"));
             
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el alumno");
@@ -124,7 +138,7 @@ public class AlumnoData {
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
-                alumno.setEstado(rs.getBoolean("estado"));
+                alumno.setEstado(rs.getInt("estado"));
                 alumnos.add(alumno);
             }
             ps.close();
@@ -138,7 +152,7 @@ public class AlumnoData {
 
     public void modificarAlumno(Alumno alumno) {
 
-        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNacimiento = ?, estado = ? WHERE  idAlumno = ?";
+        String sql = "UPDATE alumno SET dni = ? , apellido = ?, nombre = ?, fechaNacimiento = ? WHERE  idAlumno = ?";
         PreparedStatement ps = null;
 
         try {
@@ -147,17 +161,16 @@ public class AlumnoData {
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
             ps.setDate(4, Date.valueOf(alumno.getFechaNac()));
-            ps.setBoolean(5,alumno.isEstado());
-            ps.setInt(6, alumno.getIdAlumno());
+            ps.setInt(5, alumno.getIdAlumno());
             int exito = ps.executeUpdate();
             
             if (exito == 1) {
-                JOptionPane.showMessageDialog(null, "Modificado exitosamente");
+                JOptionPane.showMessageDialog(null, "Modificado Exitosamente.");
             } else {
                 JOptionPane.showMessageDialog(null, "El alumno no existe");
             }
-        } 
-        catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno "+ex.getMessage());
         }
      }
