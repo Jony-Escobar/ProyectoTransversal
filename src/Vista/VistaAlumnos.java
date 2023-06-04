@@ -273,7 +273,7 @@ public class VistaAlumnos extends javax.swing.JInternalFrame {
        }
        btnEliminar.setEnabled(true);
        }
-       JOptionPane.showMessageDialog(null, "Alumno no encontrado");
+       
                
     }//GEN-LAST:event_btnBuscarActionPerformed
 

@@ -127,7 +127,7 @@ public class MateriaData {
         return materia;
     }
 
-    public Materia modificarMateria(Materia materia) {
+    public void modificarMateria(Materia materia) {
 
         String sql = "UPDATE materia SET IdMateria = ? , anio = ?, nombre = ?, estado = ? WHERE  idMateria = ?";
         PreparedStatement ps = null;
@@ -138,6 +138,8 @@ public class MateriaData {
             ps.setInt(2, materia.getAnio());
             ps.setString(3, materia.getNombre());
             ps.setInt(4,(materia.isEstado()));
+            ps.setInt(5, materia.getIdMateria());
+            
             int exito = ps.executeUpdate();
             
             if (exito == 1) {
@@ -149,7 +151,7 @@ public class MateriaData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder la materia");
         }
-        return materia;
+        
     }
 
     public ArrayList<Materia> listarMaterias() {

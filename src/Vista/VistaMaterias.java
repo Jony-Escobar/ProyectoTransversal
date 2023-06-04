@@ -7,6 +7,10 @@ import javax.swing.JOptionPane;
 public class VistaMaterias extends javax.swing.JInternalFrame {
 
     MateriaData md = new MateriaData();
+<<<<<<< HEAD
+    int control=0;
+=======
+>>>>>>> 621270f14cf09fb38cf9f44a3ab3e11d91a1106b
     
     public VistaMaterias() {
         initComponents();
@@ -19,6 +23,10 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         btnBorrar.setEnabled(false);
         btnBuscar.setEnabled(false);
         btnGuardar.setEnabled(false);
+<<<<<<< HEAD
+        jrbModificar.setEnabled(false);
+=======
+>>>>>>> 621270f14cf09fb38cf9f44a3ab3e11d91a1106b
     }
 
     @SuppressWarnings("unchecked")
@@ -257,7 +265,12 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
             
             
         }else if(!txtNombre.getText().equals("")){
+<<<<<<< HEAD
+            
+             Materia m = md.buscarMateria(txtNombre.getText()); 
+=======
             Materia m = md.buscarMateria(Integer.parseInt(txtId.getText()));
+>>>>>>> 621270f14cf09fb38cf9f44a3ab3e11d91a1106b
             txtId.setText(m.getIdMateria() + "");
             txtNombre.setText(m.getNombre());
             txtAnio.setText(m.getAnio() + "");
@@ -268,6 +281,14 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
             }
             btnBorrar.setEnabled(true);
         }
+<<<<<<< HEAD
+        
+        if(jrbBuscar.isSelected() && jrbModificar.isEnabled()==false){
+          control++;
+          jrbModificar.setEnabled(true);
+        }
+=======
+>>>>>>> 621270f14cf09fb38cf9f44a3ab3e11d91a1106b
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jrbNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbNuevaActionPerformed
@@ -293,7 +314,11 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         btnBuscar.setEnabled(false);
         btnBorrar.setEnabled(false);
         lbId.setEnabled(true);
+<<<<<<< HEAD
+        txtId.setEnabled(false);
+=======
         txtId.setEnabled(true);
+>>>>>>> 621270f14cf09fb38cf9f44a3ab3e11d91a1106b
         lbNombre.setEnabled(true);
         txtNombre.setEnabled(true);
         lbAnio.setEnabled(true);
@@ -325,6 +350,10 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+<<<<<<< HEAD
+               
+=======
+>>>>>>> 621270f14cf09fb38cf9f44a3ab3e11d91a1106b
         if(jrbNueva.isSelected() && !txtNombre.equals("")){
             try {
                 Materia m = new Materia();
@@ -352,7 +381,11 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
                     m.setEstado(1);
                 }else{
                     m.setEstado(0);
+<<<<<<< HEAD
+                }  
+=======
                 }      
+>>>>>>> 621270f14cf09fb38cf9f44a3ab3e11d91a1106b
                 md.modificarMateria(m);
                 
             } catch (NumberFormatException e) {

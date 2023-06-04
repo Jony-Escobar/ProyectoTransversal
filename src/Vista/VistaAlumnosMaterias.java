@@ -121,7 +121,6 @@ public class VistaAlumnosMaterias extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void jcbMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriaActionPerformed
-//        insData.obtenerAlumnosXMateria(WIDTH)
        borrarFilas(); 
        llenarTabla();
         
