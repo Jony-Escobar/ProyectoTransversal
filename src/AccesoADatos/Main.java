@@ -22,9 +22,6 @@ import javax.swing.JOptionPane;
 
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) throws SQLException {
         
 //        LocalDate fecha= LocalDate.of(1982,06,15);
@@ -46,7 +43,7 @@ public class Main {
 //        for(int i=0; i<tam;i++){
 //            System.out.println(materiastabla.get(i));
 //        }
-//        /*materiastabla.forEach(mat -> {
+//        materiastabla.forEach(mat -> {
 //            System.out.println(mat.toString());
 //        });*/
 //        
@@ -161,6 +158,5 @@ public class Main {
 //    
 //
 //
-//    }
-//    
-//
+}
+}
